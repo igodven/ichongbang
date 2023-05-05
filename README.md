@@ -3,36 +3,34 @@
 #### 一.模块简介
 
 > 1.  starter-ichong-restrictor
-      >
-      >    ```
+>
+>    ```
 >    基于redission，接口限流starter模块
 >    ```
 >
 > 2.  starter-ichong-jobregister
-      >
-      >    ```
+>
+>    ```
 >    基于xxl-job，自动任务自动注册到管理平台starter模块
 >    ```
 >
 > 3.  xxl-job-admin
-      >
-      >    ```
+>
+>    ```
 >    xxl-job,自动任务管理平台
 >    ```
 >
 > 4.  ichong-starter-testdemo
-      >
-      >    ```
+>
+>    ```
 >    接口限流starter，自动任务注册starter测试模块
 >    ```
->
->
 
 #### 二.starter-ichong-restrictor模块的使用
 
 >1. 相关服务依赖导入
-    >
-    >   ```xml
+>
+>   ```xml
 >           <dependency>
 >               <groupId>com.ichong</groupId>
 >               <artifactId>starter-ichong-restrictor</artifactId>
@@ -40,11 +38,9 @@
 >           </dependency>
 >   ```
 >
->
->
 >2. 配置文件添加配置(redission相关的配置)
-    >
-    >   ```yaml
+>
+>   ```yaml
 >   singleServerConfig:
 >     idleConnectionTimeout: 10000
 >     connectTimeout: 10000
@@ -69,8 +65,6 @@
 >   transportMode: "NIO"
 >   ```
 >
->
->
 >3.  使用方式
 >
 >   ```
@@ -83,11 +77,9 @@
 >   interfaceName: 限流接口名
 >   ```
 >
->
->
 >4. 全局异常处理
-    >
-    >   ```java
+>
+>   ```java
 >   @ControllerAdvice
 >   public class CustomExceptionHandler {
 >   
@@ -101,16 +93,12 @@
 >       }
 >   }
 >   ```
->
->5.
->
->
 
 #### 三.starter-ichong-jobregister模块的使用
 
 >1. 相关服务添加依赖
-    >
-    >   ```xml
+>
+>   ```xml
 >          <dependency>
 >               <groupId>com.ichong</groupId>
 >               <artifactId>starter-ichong-jobregister</artifactId>
@@ -118,11 +106,9 @@
 >           </dependency>
 >   ```
 >
->
->
 >2. 添加配置（redission的配置，xxl-job配置）
-    >
-    >   ```yaml
+>
+>   ```yaml
 >   xxl-job:
 >    #xxl-job管理平台的账号
 >    username: admin
@@ -157,12 +143,7 @@
 >   ```
 >
 >3. 使用方式(@XxlRegister)
-    >
-    >   ```
+>
+>   ```
 >   在相应的服务的自动任务方法上加上@XxlRegister注解，该注解定义xxljob，自动任务需要配置的所有参数，相关开发人员更具需要自己调整
 >   ```
->
->4.
->
->
-
